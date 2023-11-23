@@ -1,9 +1,8 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
-// TODO: 시침, 분침, 초침 만들기
-let mouseX = 0,
-  mouseY = 0;
+let mouseX = window.innerWidth / 2,
+  mouseY = window.innerHeight / 2;
 
 class Clock {
   constructor() {
@@ -95,7 +94,7 @@ class Clock {
 
       ctx.font = "bold 20px monospace";
       ctx.textAlign = "center";
-      ctx.fillText(number, bx + Math.sin(p) * 100, by + Math.cos(p) * 100);
+      ctx.fillText(number, bx + Math.sin(p) * 100, by + Math.cos(p) * 100 + 5);
     }
 
     for (let i = 0; i < 3; i++) {
